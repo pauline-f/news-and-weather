@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Settings.css';
+import Country from '../Country/Country';
 
-const countries = [{ id: 'se', name: 'Sweden' }, { id: 'fr', name: 'France' }, { id: 'de', name: 'Germany' }, { id: 'gb', name: 'United Kingdom' }, { id: 'es', name: 'Spain' }, { id: 'it', name: 'Italy' }]
+
+const countries = [{ id: 'se', name: 'Sweden' }, { id: 'fr', name: 'France' }, { id: 'de', name: 'Germany' }, { id: 'gb', name: 'United Kingdom' }, { id: 'it', name: 'Italy' }]
 
 
-function Settings() {
-  const [selectedCountry, setSelectedCountry] = useState('se');
+function Settings(props) {
 
   return (
     <div className="Settings">
-      <select name="country">
-        {countries.map(country => (
-          <option value={country.id} selected={selectedCountry===country.id}>{country.name}</option>
-        ))}
-      </select>
+
+      {countries.map((element, index) => {
+        return <Country key={index} country={element.id} setCountry={props.setCountry} selectedCountry={props.country} />
+      })}
     </div>
   );
 }
