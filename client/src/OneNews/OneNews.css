@@ -1,4 +1,24 @@
+.OneNews {
+  display: flex;
+  border: 1px solid darkgrey;
+  margin: 20px;
+  background-color: #fffde7;
+}
+
+.OneNews:hover {
+  display: flex;
+  border: 1px solid darkgrey;
+  margin: 20px;
+  background-color: #fff176;
+}
+
 img {
-  width: 10%;
-  height: 10%;
+  width: 20%;
+  height: 20%;
+  margin-right: 10px;
+}
+
+
+a {
+  
 }

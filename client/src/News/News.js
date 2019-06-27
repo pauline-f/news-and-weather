@@ -9,7 +9,7 @@ function News(props) {
   const country = props.country ? props.country : 'se';
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${NEWS_API_KEY}`)
+    fetch(`/api/news?country=${country}`)
       .then(res => res.json())
       .then(data => setNews(data.articles))
   }, [])
@@ -19,7 +19,7 @@ function News(props) {
       <h1>News</h1>
       {
         news.map((oneNew, index) => (
-          <OneNews key={index} title={oneNew.title} link={oneNew.url} photo={oneNew.urlToImage} />
+          <OneNews key={index} title={oneNew.title} description={oneNew.description} link={oneNew.url} photo={oneNew.urlToImage} />
         ))
       }
     </div>

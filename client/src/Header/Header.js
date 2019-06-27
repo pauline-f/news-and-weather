@@ -6,16 +6,16 @@ function Header() {
   return (
     <div className="Header">
       <nav>
-        <div>
+        <div className='link'>
           <Link to="/">Home</Link>
         </div>
-        <div>
+        <div className='link'>
           <Link to="/news">News</Link>
         </div>
-        <div>
+        <div className='link'>
           <Link to="/weather">Weather</Link>
         </div>
-        <div>
+        <div className='link'>
           <Link to="/settings">Settings</Link>
         </div>
       </nav>

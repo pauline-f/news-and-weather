@@ -1,0 +1,19 @@
+.settingsButton {
+  background-color: #ffeb3b;
+  color: black;
+  border: 1px solid #fdd835;
+  padding: 10px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.settingsButton:hover {
+  background-color: #fbc02d;
+  color: black;
+  border: 1px solid #fdd835;
+  padding: 10px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+h1 {
+  padding-bottom: 30px; 
+}

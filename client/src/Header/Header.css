@@ -5,4 +5,15 @@ nav {
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+a:active {
+  text-decoration: underline;
+  color: black;
+}
+
+nav {
+  background-color: #ffeb3b;
+  padding: 20px;
 }

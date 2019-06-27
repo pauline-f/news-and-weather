@@ -10,7 +10,8 @@ function Weather(props) {
   const city = props.city ? props.city : 'Stockholm';
 
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=***REMOVED***`)
+    // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=***REMOVED***`)
+    fetch(`/api/weather?city=${city}`)
       .then(response => response.json())
       .then(data => setWeather(data))
   }, [])
