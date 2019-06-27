@@ -22,7 +22,6 @@ app.get('/api/news', (req, res) => {
 app.get('/api/weather', (req, res) => {
   const city = req.query.city;
   https.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=***REMOVED***`, (result) => {
-
     let data = '';
     result.on('data', chunk => {
       data += chunk;

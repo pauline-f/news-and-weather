@@ -1,7 +1,7 @@
 import React from 'react';
 import './Settings.css';
 import Country from '../Country/Country';
-
+import { Link } from 'react-router-dom';
 
 const countries = [{ id: 'se', name: 'Sweden' }, { id: 'fr', name: 'France' }, { id: 'de', name: 'Germany' }, { id: 'gb', name: 'United Kingdom' }, { id: 'it', name: 'Italy' }]
 
@@ -15,18 +15,29 @@ function Settings(props) {
 
   return (
     <div className="Settings">
-      <h3>Country:</h3>
-      <div>
-        {countries.map((element, index) => {
-          return <Country key={index} name={element.name} country={element.id} setCountry={props.setCountry} selectedCountry={props.country} />
-        })}
-
+      <div className='container'>
+        <h2>News</h2>
+        <h3>Country:</h3>
+        <div>
+          {countries.map((element, index) => {
+            return <Country key={index} name={element.name} country={element.id} setCountry={props.setCountry} selectedCountry={props.country} />
+          })}
+        </div>
+        <div className='divButton'>
+          <Link className='settingsButton button' to="/news">Go to News</Link>
+        </div>
       </div>
 
-      <div>
-        <h3>City:</h3>
-        <input type='text' id='city' />
-        <button onClick={onClick}>Save</button>
+      <div className="container">
+        <div className='city'>
+          <h2>Weather</h2>
+          <h3>City:</h3>
+          <input type='text' id='city' />
+          <button onClick={onClick}>Save</button>
+        </div>
+        <div className='divButton'>
+          <Link className='settingsButton' to="/weather">Go to Weather</Link>
+        </div>
       </div>
     </div>
   );

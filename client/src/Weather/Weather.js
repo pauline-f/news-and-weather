@@ -10,7 +10,6 @@ function Weather(props) {
   const city = props.city ? props.city : 'Stockholm';
 
   useEffect(() => {
-    // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=***REMOVED***`)
     fetch(`/api/weather?city=${city}`)
       .then(response => response.json())
       .then(data => setWeather(data))
@@ -23,12 +22,20 @@ function Weather(props) {
       <div>
         {isCityFound ? (
           <div>
-            <h3>{city}</h3>
-            <p>{weather.weather ? weather.weather[0].main : ''}</p>
-            <p>{weather.weather ? weather.weather[0].description : ''}</p>
-            <img alt="weather" src={weather.weather ? `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''}></img>
-            <p>Min temperature: {weather.main ? parseInt(weather.main.temp_min - 273.15) : ''}</p>
-            <p>Max temperature: {weather.main ? parseInt(weather.main.temp_max - 273.15) : ''}</p>
+            <h1>{city}</h1>
+            <div className='divWeather'>
+              <div>
+                <img className='imgWeather' alt="weather" src={weather.weather ? `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png` : ''}></img>
+              </div>
+              <div>
+                <p>{weather.weather ? weather.weather[0].main : ''}</p>
+                <p>{weather.weather ? weather.weather[0].description : ''}</p>
+              </div>
+              <div>
+                <p>Min temp: {weather.main ? parseInt(weather.main.temp_min - 273.15) + '°C' : ''}</p>
+                <p>Max temp: {weather.main ? parseInt(weather.main.temp_max - 273.15) + '°C' : ''}</p>
+              </div>
+            </div>
           </div>
         ) : (
             <div>
@@ -38,7 +45,7 @@ function Weather(props) {
           )}
       </div>
 
-</div >
+    </div >
   );
 }
 

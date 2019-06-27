@@ -1,0 +1,16 @@
+.Weather {
+  border: 1px solid darkgray;
+  margin: 40px;
+  margin-top: 20px; 
+}
+
+.divWeather {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgWeather {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
