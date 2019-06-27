@@ -13,6 +13,9 @@ function Header() {
           <Link to="/news">News</Link>
         </div>
         <div>
+          <Link to="/weather">Weather</Link>
+        </div>
+        <div>
           <Link to="/settings">Settings</Link>
         </div>
       </nav>

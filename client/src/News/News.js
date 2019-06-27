@@ -16,7 +16,7 @@ function News(props) {
 
   return (
     <div className="News">
-      {props.country}
+      <h1>News</h1>
       {
         news.map((oneNew, index) => (
           <OneNews key={index} title={oneNew.title} link={oneNew.url} photo={oneNew.urlToImage} />
