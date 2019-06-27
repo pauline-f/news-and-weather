@@ -17,6 +17,7 @@ const cityName = localStorage.getItem('city');
 function App() {
   const [country, setCountry] = useState(countryName);
   const [city, setCity] = useState(cityName);
+  
   return (
     <BrowserRouter>
       <div className="App">

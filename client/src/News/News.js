@@ -5,7 +5,6 @@ import OneNews from '../OneNews/OneNews';
 function News(props) {
 
   const [news, setNews] = useState([]);
-  const NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY;
   const country = props.country ? props.country : 'se';
 
   useEffect(() => {

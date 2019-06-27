@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 function Weather(props) {
-  const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
   const [weather, setWeather] = useState({});
 
   const city = props.city ? props.city : 'Stockholm';
@@ -40,7 +39,7 @@ function Weather(props) {
         ) : (
             <div>
               <h3>City not found</h3>
-              {<Link to="/settings">Save a new city</Link>}
+              {<Link className='settingsButton' to="/settings">Save a new city</Link>}
             </div>
           )}
       </div>
