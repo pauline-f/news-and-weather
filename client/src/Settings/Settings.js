@@ -3,7 +3,11 @@ import './Settings.css';
 import Country from '../Country/Country';
 import { Link } from 'react-router-dom';
 
-const countries = [{ id: 'se', name: 'Sweden' }, { id: 'fr', name: 'France' }, { id: 'de', name: 'Germany' }, { id: 'gb', name: 'United Kingdom' }, { id: 'it', name: 'Italy' }]
+const countries = [{ id: 'se', name: 'Sweden' }, 
+                    { id: 'fr', name: 'France' }, 
+                    { id: 'gb', name: 'UK' }, 
+                    { id: 'de', name: 'Germany' }, 
+                    { id: 'it', name: 'Italy' }]
 
 
 function Settings(props) {
@@ -32,7 +36,7 @@ function Settings(props) {
         <div className='city'>
           <h2>Weather</h2>
           <h3>City:</h3>
-          <input type='text' id='city' />
+          <input type='text' id='city' autocomplete='off'/>
           <button onClick={onClick}>Save</button>
         </div>
         <div className='divButton'>

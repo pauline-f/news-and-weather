@@ -39,7 +39,9 @@ function Weather(props) {
         ) : (
             <div>
               <h3>City not found</h3>
-              {<Link className='settingsButton' to="/settings">Save a new city</Link>}
+              <div className='divButton'>
+                {<Link className='settingsButton' to="/settings">Save a new city</Link>}
+              </div>
             </div>
           )}
       </div>
