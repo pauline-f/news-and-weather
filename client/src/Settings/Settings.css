@@ -31,3 +31,8 @@ button:hover {
 .divButton {
   margin: 20px;
 }
+
+.weatherCity {
+  display: flex;
+  justify-content: center;
+}

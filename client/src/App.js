@@ -9,22 +9,23 @@ import Settings from './Settings/Settings';
 
 if (!localStorage.getItem('country')) localStorage.setItem('country', 'se');
 
-if (!localStorage.getItem('city')) localStorage.setItem('city', 'Stockholm');
+if (!JSON.parse(localStorage.getItem('city'))) localStorage.setItem('city', JSON.stringify(['Stockholm']));
+
 
 const countryName = localStorage.getItem('country');
-const cityName = localStorage.getItem('city');
+const cityName = JSON.parse(localStorage.getItem('city'));
 
 function App() {
   const [country, setCountry] = useState(countryName);
   const [city, setCity] = useState(cityName);
-  
+
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
         <Route exact path='/' component={Home} />
         <Route path='/news' render={(props) => <News {...props} country={country} component={News} />} />
-        <Route path='/weather' render={(props) => <Weather {...props} city={city} component={Weather} />} />
+        <Route path='/weather' render={(props) => <Weather {...props} city={city} setCity={setCity} component={Weather} />} />
         <Route path='/settings' render={(props) => <Settings {...props} country={country} setCountry={setCountry} city={city} setCity={setCity} component={Settings} />} />
       </div>
     </BrowserRouter>

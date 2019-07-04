@@ -13,7 +13,6 @@ function Country(props) {
     <div className="Country">
       <input type="radio" id={props.country} name="country" value={props.country} onChange={onChange} checked={props.country === props.selectedCountry} />
       <label htmlFor={props.country}>{props.name}</label>
-
     </div>
   );
 }

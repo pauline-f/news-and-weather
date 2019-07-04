@@ -1,21 +1,33 @@
 import React from 'react';
 import './Settings.css';
-import Country from '../Country/Country';
 import { Link } from 'react-router-dom';
+import Country from '../Country/Country';
+import CitySettings from '../CitySettings/CitySettings';
 
-const countries = [{ id: 'se', name: 'Sweden' }, 
-                    { id: 'fr', name: 'France' }, 
-                    { id: 'gb', name: 'UK' }, 
-                    { id: 'de', name: 'Germany' }, 
-                    { id: 'it', name: 'Italy' }]
+const countries = [{ id: 'se', name: 'Sweden' },
+{ id: 'fr', name: 'France' },
+{ id: 'gb', name: 'UK' },
+{ id: 'de', name: 'Germany' },
+{ id: 'it', name: 'Italy' }]
+
+
 
 
 function Settings(props) {
-  const onClick = e => {
+
+  let cities;
+
+  const onClick = () => {
+    cities = JSON.parse(localStorage.getItem('city'));
     const city = document.getElementById('city').value;
-    localStorage.setItem('city', city);
-    props.setCity(city);
+    console.log(cities);
+    cities.push(city);
+    localStorage.setItem('city', JSON.stringify(cities));
+    props.setCity(cities);
+    document.getElementById('city').value = '';
   };
+
+  console.log(props.city);
 
   return (
     <div className="Settings">
@@ -35,9 +47,18 @@ function Settings(props) {
       <div className="container">
         <div className='city'>
           <h2>Weather</h2>
-          <h3>City:</h3>
-          <input type='text' id='city' autocomplete='off'/>
-          <button onClick={onClick}>Save</button>
+          <div className="weatherCity">
+            <h3>City:</h3>
+            <input type='text' id='city' autoComplete='off' />
+            <button onClick={onClick}>Save</button>
+          </div>
+        </div>
+        <div>
+          <ul>
+            {
+              props.city.map((c, index) => <CitySettings key={index} city={c} setCity={props.setCity} />)
+            }
+          </ul>
         </div>
         <div className='divButton'>
           <Link className='settingsButton' to="/weather">Go to Weather</Link>
