@@ -10,9 +10,6 @@ const countries = [{ id: 'se', name: 'Sweden' },
 { id: 'de', name: 'Germany' },
 { id: 'it', name: 'Italy' }]
 
-
-
-
 function Settings(props) {
 
   let cities;

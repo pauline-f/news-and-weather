@@ -24,9 +24,9 @@ function App() {
       <div className="App">
         <Header />
         <Route exact path='/' component={Home} />
-        <Route path='/news' render={(props) => <News {...props} country={country} component={News} />} />
-        <Route path='/weather' render={(props) => <Weather {...props} city={city} setCity={setCity} component={Weather} />} />
-        <Route path='/settings' render={(props) => <Settings {...props} country={country} setCountry={setCountry} city={city} setCity={setCity} component={Settings} />} />
+        <Route path='/news' render={() => <News country={country} component={News} />} />
+        <Route path='/weather' render={() => <Weather city={city} setCity={setCity} component={Weather} />} />
+        <Route path='/settings' render={() => <Settings country={country} setCountry={setCountry} city={city} setCity={setCity} component={Settings} />} />
       </div>
     </BrowserRouter>
   );
